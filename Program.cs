@@ -1,5 +1,6 @@
 
 using Student.Web.Api.Data;
+using Student.Web.Api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<StudentDataContext>();
+builder.Services.AddScoped<IPupilRepository, PupilRepository>();
 
 var app = builder.Build();
 

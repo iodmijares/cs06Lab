@@ -20,7 +20,7 @@ namespace Student.Web.Api.Models
         { 
             get 
             {
-                return MiddleName.Substring(1) + ".";
+                return MiddleName.Substring(0,1) + ".";
             } 
         }
     }

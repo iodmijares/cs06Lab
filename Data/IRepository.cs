@@ -4,8 +4,10 @@ namespace Student.Web.Api.Data
 {
     public interface IRepository<T>
     {
-        Task<T> AddAsync(T newT);
-        void Update<K, T>(K id, T input);
+        void Add(T newT);
+        void Update<K>(K id, T input);
         void Delete(T item);
+
+        Task<bool> SaveAllChangesAsync();
     }
 }
