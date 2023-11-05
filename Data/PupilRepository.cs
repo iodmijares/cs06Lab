@@ -32,10 +32,11 @@ namespace Student.Web.Api.Data
         public async void Update<K>(K id, Pupil input)
         {
             // Get the pupil
-            var thePupil = await _studentContex.Students.FindAsync(id);
+            var thePupil = await _studentContex.Students.FindAsync();
             thePupil.LastName = input.LastName;
             thePupil.FirsName = input.FirsName;
             thePupil.MiddleName = input.MiddleName;
+
         }
 
         public async Task<List<Pupil>> GetAllAsync()

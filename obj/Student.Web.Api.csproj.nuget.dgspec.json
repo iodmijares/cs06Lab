@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\inCoder\\Documents\\OOP\\Lab\\REST\\Student.Web.Api\\Student.Web.Api.csproj": {}
+    "C:\\Users\\Windows\\Documents\\c#\\Rest\\LAB5\\cs06Lab\\Student.Web.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\inCoder\\Documents\\OOP\\Lab\\REST\\Student.Web.Api\\Student.Web.Api.csproj": {
+    "C:\\Users\\Windows\\Documents\\c#\\Rest\\LAB5\\cs06Lab\\Student.Web.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\inCoder\\Documents\\OOP\\Lab\\REST\\Student.Web.Api\\Student.Web.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Windows\\Documents\\c#\\Rest\\LAB5\\cs06Lab\\Student.Web.Api.csproj",
         "projectName": "Student.Web.Api",
-        "projectPath": "C:\\Users\\inCoder\\Documents\\OOP\\Lab\\REST\\Student.Web.Api\\Student.Web.Api.csproj",
-        "packagesPath": "C:\\Users\\inCoder\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\inCoder\\Documents\\OOP\\Lab\\REST\\Student.Web.Api\\obj\\",
+        "projectPath": "C:\\Users\\Windows\\Documents\\c#\\Rest\\LAB5\\cs06Lab\\Student.Web.Api.csproj",
+        "packagesPath": "C:\\Users\\Windows\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Windows\\Documents\\c#\\Rest\\LAB5\\cs06Lab\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\inCoder\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Windows\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -27,7 +27,6 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\inCoder\\Downloads": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,7 +57,7 @@
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[7.0.12, )"
+              "version": "[7.0.13, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

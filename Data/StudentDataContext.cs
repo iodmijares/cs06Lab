@@ -9,7 +9,7 @@ namespace Student.Web.Api.Data
 
         public DbSet<Pupil> Students { get; set; }
         public DbSet<Subject> Subjects { get; set; }
-        public DbSet<Grading> Grading { get; set; }
+        public DbSet<Grading?> Gradings { get; set; }
 
 
         public StudentDataContext(
@@ -37,13 +37,13 @@ namespace Student.Web.Api.Data
             modelBuilder.Entity<Grading>(p =>
             {
                 p.ToTable("Gradings");
-                p.HasKey(x => x.Id);
+                p.HasKey(x => x.GradeId);
             });
 
             modelBuilder.Entity<Subject>(p =>
             {
                 p.ToTable("Subjects");
-                p.HasKey(x => x.Id);
+                p.HasKey(x => x.SubjectId);
             });
         }
     }

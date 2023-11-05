@@ -51,15 +51,17 @@ namespace Student.Web.Api.Controllers
         public async Task<IActionResult> Put(PupilDto input)
         {
             var pupil = await _pupilRepository.GetById(input.StudentId);
+           
             pupil.LastName = input.LastName;
             pupil.FirsName = input.FirsName;
             pupil.MiddleName = input.MiddleName;
+
             
             if ( await _pupilRepository.SaveAllChangesAsync())
             {
                 return Ok("Updated Na!");
             }
-
+            
             return BadRequest("May Error");
         }
 
