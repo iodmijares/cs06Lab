@@ -43,10 +43,10 @@ namespace Student.Web.Api.Data
             return await _studentContex.Students.ToListAsync();
         }
 
-        public async Task<Pupil?> GetById(string id)
-        {
-            return await _studentContex.Students.FirstOrDefaultAsync(x => x.StudentId == id);
-        }
 
+        public async Task<Pupil?> GetById<K>(K id)
+        {
+            return await _studentContex.Students.FirstOrDefaultAsync(x => x.StudentId == id.ToString());
+        }
     }
 }

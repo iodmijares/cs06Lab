@@ -10,6 +10,7 @@ namespace Student.Web.Api.Data
         public DbSet<Pupil> Students { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Grading> Grading { get; set; }
+        public DbSet<Grade> Grades { get; set; }
 
 
         public StudentDataContext(
@@ -44,6 +45,20 @@ namespace Student.Web.Api.Data
             {
                 p.ToTable("Subjects");
                 p.HasKey(x => x.Id);
+            });
+
+            modelBuilder.Entity<Grade>(p =>
+            {
+                p.ToTable("Grades");
+                p.HasKey(x => x.Id);
+                p.HasOne(x => x.Pupil)
+                    .WithMany(x => x.Grades)
+                    .HasForeignKey(x => x.PupilId)
+                    .OnDelete(DeleteBehavior.Cascade);
+                p.HasOne(x => x.Subject)
+                    .WithMany(x => x.Grades)
+                    .HasForeignKey(x => x.SubjectId)
+                    .OnDelete(DeleteBehavior.Cascade);
             });
         }
     }

@@ -23,5 +23,7 @@ namespace Student.Web.Api.Models
                 return MiddleName.Substring(0,1) + ".";
             } 
         }
+
+        public List<Grade> Grades { get; set; }
     }
 }
