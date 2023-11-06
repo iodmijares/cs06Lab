@@ -12,6 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<StudentDataContext>();
 builder.Services.AddScoped<IPupilRepository, PupilRepository>();
+builder.Services.AddScoped<ISubjectRepository, SubjectRepository>();
+builder.Services.AddScoped<IGradeRepository, GradeRepository>();
 
 var app = builder.Build();
 

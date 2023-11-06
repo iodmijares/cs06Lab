@@ -6,5 +6,7 @@ namespace Student.Web.Api.Dto
         public string LastName { get; set; } = string.Empty;
         public string FirsName { get; set; } = string.Empty;
         public string MiddleName { get; set; } = string.Empty;
+
+        public List<GradeDto> Grades { get; set; } = new List<GradeDto>();
     }
 }
