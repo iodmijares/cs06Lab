@@ -6,4 +6,4 @@ namespace Student.Web.Api.Dto
         public string Grade { get; set; }
         public string Remarks { get; set; }
     }
-}
+}   

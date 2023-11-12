@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Student.Web.Api.Data;
 using Student.Web.Api.Dto;
+using Student.Web.Api.Dto.Builders;
 using Student.Web.Api.Models;
 
 namespace Student.Web.Api.Controllers
@@ -103,27 +104,36 @@ namespace Student.Web.Api.Controllers
             return Ok(subjectToReturn);
         }
 
-        [HttpPost()]
-        public async Task<IActionResult> Post(GradeDto input)
-        {
-            var newGrade = new Grade();
-            newGrade.PupilId = input.PupilId;
-            newGrade.SubjectId = input.SubjectId;
-            newGrade.MidTerm = input.MidTerm;
-            newGrade.FinalTerm = input.FinalTerm;
-            newGrade.FinalGrade = input.FinalGrade;
-            newGrade.Remarks = input.Remarks;
+       // In GradesController class
+[HttpPost()]
+public async Task<IActionResult> Post(GradeDto input)
+{
+    var newGrade = new GradeDtoBuilder()
+        .WithGradeInfo(input.PupilId, input.SubjectId, input.MidTerm, input.FinalTerm, input.FinalGrade, input.Remarks)
+        .Build();
+
+    // Convert GradeDto to Grade
+    var gradeEntity = new Grade
+    {
+        PupilId = newGrade.PupilId,
+        SubjectId = newGrade.SubjectId,
+        MidTerm = newGrade.MidTerm,
+        FinalTerm = newGrade.FinalTerm,
+        FinalGrade = newGrade.FinalGrade,
+        Remarks = newGrade.Remarks
+    };
+
+    _gradeRepository.Add(gradeEntity);
+
+    if (await _gradeRepository.SaveAllChangesAsync())
+    {
+        return Ok(input);
+    }
+
+    return BadRequest("May Error");
+}
 
 
-            _gradeRepository.Add(newGrade);
-
-            if ( await _gradeRepository.SaveAllChangesAsync())
-            {
-                return Ok(input);
-            }
-
-            return BadRequest("May Error");
-        }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(GradeDto input)

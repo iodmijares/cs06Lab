@@ -14,6 +14,8 @@ builder.Services.AddDbContext<StudentDataContext>();
 builder.Services.AddScoped<IPupilRepository, PupilRepository>();
 builder.Services.AddScoped<ISubjectRepository, SubjectRepository>();
 builder.Services.AddScoped<IGradeRepository, GradeRepository>();
+builder.Services.AddScoped<ISubjectFactory, SubjectFactory>();
+
 
 var app = builder.Build();
 
